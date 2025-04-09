@@ -5,16 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>THPT MỸ HƯƠNG</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@700&display=swap"
+        rel="stylesheet">
+    <title>TRƯỜNG THPT MỸ HƯƠNG</title>
 </head>
 
 <body>
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <img src="hinh/thpt.png" alt="Logo Trường">
+            <img src="hinh/thpt.png" alt="Hình ảnh Trường THPT Mỹ Hương">
             <div class="company-info">
-                <h1>THPT MỸ HƯƠNG</h1>
+                <h1 class="school-title">TRƯỜNG THPT MỸ HƯƠNG</h1>
             </div>
         </div>
 
@@ -22,8 +24,15 @@
         <div class="nav">
             <ul class="menu">
                 <li><a href="#" onclick="showHome(event)">Trang Chủ |</a></li>
-                <li><a href="#" onclick="loadPage(event, 'gioithieu.html')">Giới Thiệu |</a></li>
+                <li class="dropdown">
+                    <a href="#" onclick="loadPage(event, 'gioithieu.html')">Giới Thiệu |</a>
+                    <ul class="submenu">
+                        <li><a href="#" onclick="loadPage(event, 'sodotochuc.html')">Sơ Đồ Tổ Chức</a></li>
+                        <li><a href="#" onclick="loadPage(event, 'thuvien.html')">Thư Viện</a></li>
+                    </ul>
+                </li>
                 <li><a href="#" onclick="loadPage(event, 'lichlamviec.html')">Lịch Làm Việc |</a></li>
+                <li><a href="#" onclick="loadPage(event, 'lienhe.html')">Liên Hệ |</a></li> <!-- Thêm mục Liên Hệ -->
                 <li><a href="#" onclick="loadPage(event, 'gopy.html')">Góp Ý |</a></li>
                 <li><a href="#" onclick="loadPage(event, 'hoidap.html')">Hỏi & Đáp |</a></li>
             </ul>
@@ -53,21 +62,18 @@
 
     <!-- Footer -->
     <footer>
-        FPT Polytechnic © 2017. All rights reserved.
+        Trường THPT Mỹ Hương © 1980. All rights reserved.
     </footer>
 
     <!-- JavaScript -->
     <script>
-        // Đặt lại trạng thái khi trang được tải
         window.onload = function () {
             document.getElementById("contentFrame").style.display = "none";
             document.getElementById("intro").style.display = "block";
         };
 
         function loadPage(event, page) {
-            event.preventDefault(); // Ngăn chặn tải trang mới
-
-            // Ẩn phần intro và hiển thị iframe
+            event.preventDefault();
             document.getElementById("intro").style.display = "none";
             let iframe = document.getElementById("contentFrame");
             iframe.style.display = "block";
@@ -75,9 +81,7 @@
         }
 
         function showHome(event) {
-            event.preventDefault(); // Ngăn chặn tải trang mới
-
-            // Ẩn iframe và hiển thị phần intro
+            event.preventDefault();
             document.getElementById("contentFrame").style.display = "none";
             document.getElementById("intro").style.display = "block";
         }
@@ -86,6 +90,7 @@
             alert('Language changed to ' + language);
         }
     </script>
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'92d675ed5c7ebfde',t:'MTc0NDE2NDU0OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
 </body>
 
 </html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="thanku.css">
+    <title>Cảm Ơn Góp Ý - THPT Mỹ Hương</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>CẢM ƠN BẠN ĐÃ GÓP Ý!</h1>
+        <p>Trường THPT Mỹ Hương rất trân trọng ý kiến của bạn.</p>
+        <p>Chúng tôi sẽ xem xét và phản hồi trong thời gian sớm nhất.</p>
+        <a href="#" onclick="goToHome(); return false;" class="back-button">Quay Về Trang Chủ</a>
+    </div>
+
+    <script>
+        function goToHome() {
+            // Gọi hàm showHome từ index.html (parent)
+            window.parent.showHome(new Event('click'));
+        }
+    </script>
+</body>
+
+
+</html>
